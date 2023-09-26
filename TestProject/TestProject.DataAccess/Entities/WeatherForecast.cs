@@ -1,4 +1,4 @@
-namespace TestProject.API
+namespace TestProject.DataAccess.Entities
 {
     public class WeatherForecast
     {

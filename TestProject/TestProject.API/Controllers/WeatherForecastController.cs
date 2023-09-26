@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using TestProject.DataAccess.Entities;
 
 namespace TestProject.API.Controllers
 {
