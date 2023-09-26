@@ -12,7 +12,7 @@ jobs:
         - name: 'Checkout GitHub Action'
           uses: actions/checkout@main
           with:
-              path: release
+              ref: release
 
         - name: 'Login via Azure CLI'
           uses: azure/login@v1
