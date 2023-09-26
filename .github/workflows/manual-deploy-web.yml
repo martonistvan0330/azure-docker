@@ -4,14 +4,14 @@ on:
   workflow_dispatch
 
 jobs:
-    build-and-deploy:
+    build-and-deploy-api:
         runs-on: ubuntu-latest
         steps:
         # checkout the repo
         - name: 'Checkout GitHub Action'
           uses: actions/checkout@main
           with:
-            path: publish
+            path: release
           
         - name: 'Login via Azure CLI'
           uses: azure/login@v1
@@ -32,7 +32,7 @@ jobs:
           uses: 'azure/aci-deploy@v1'
           with:
             resource-group: ${{ secrets.RESOURCE_GROUP }}
-            dns-name-label: ${{ secrets.RESOURCE_GROUP }}v${{ github.run_number }}
+            dns-name-label: ${{ secrets.RESOURCE_GROUP }}.api
             image: ${{ secrets.REGISTRY_LOGIN_SERVER }}/testapp:v${{ github.run_number }}
             registry-login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
             registry-username: ${{ secrets.REGISTRY_USERNAME }}
