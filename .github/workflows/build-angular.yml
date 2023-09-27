@@ -7,7 +7,7 @@ on:
     branches: [ "main", "release" ]
 
 jobs:
-  build:
+  build-angular:
     defaults:
       run:
         working-directory: ClientApp
@@ -26,6 +26,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        working-directory: ClientApp
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
