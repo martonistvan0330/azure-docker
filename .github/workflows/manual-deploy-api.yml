@@ -43,5 +43,5 @@ jobs:
               registry-username: ${{ secrets.REGISTRY_USERNAME }}
               registry-password: ${{ secrets.REGISTRY_PASSWORD }}
               name: aci-testapi
-              secure-environment-variables: PRODUCTION_DB_CONNECTION_STRING=${{ secrets.PRODUCTION_DB_CONNECTION_STRING }}
+              environment-variables: PRODUCTION_DB_CONNECTION_STRING=${{ secrets.PRODUCTION_DB_CONNECTION_STRING }}
               location: 'west europe'
