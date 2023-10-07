@@ -2,12 +2,15 @@ name: Build Android
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "release" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "release" ]
 
 jobs:
-  build:
+  build-android:
+    defaults:
+      run:
+        working-directory: AndroidApp
 
     runs-on: ubuntu-latest
 
